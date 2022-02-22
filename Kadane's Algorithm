@@ -1,0 +1,24 @@
+Program to return largest sum of the sub array
+
+#include<bits/stdc++.h>
+using namespace std;
+int subarray(vector<int> a)
+{
+    int cs=0,ms=0;
+    for(int i=0;i<a.size();i++)
+    {
+        cs=cs+a[i];
+        if(cs<0)
+        {
+            cs=0;
+        }
+        ms=max(ms,cs);
+    }
+    return ms;
+}
+int main()
+{
+    vector<int> a={1,2,3,4,5};
+    cout<<subarray(a);
+return 0;
+}
